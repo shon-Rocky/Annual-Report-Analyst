@@ -1,11 +1,7 @@
 from llm import llm
 from embeddings import embeddings
-# Bring in streamlit for UI/app interface
 import streamlit as st
-# Import PDF document loaders...there's other ones as well!
 from langchain_community.document_loaders import PyPDFLoader
-# Import chroma as the vector store 
-from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 from dotenv import load_dotenv
@@ -25,9 +21,6 @@ from langchain.agents.agent_toolkits import (
 )
 
 
-# Can sub this out for other LLM providers
-
-
 # Create instance of  LLM
 llm = llm()
 embeddings = embeddings()
@@ -36,10 +29,8 @@ embeddings = embeddings()
 loader = PyPDFLoader('annualreport.pdf')
 # Split pages from pdf 
 documents = loader.load_and_split()
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=64)
-texts_chunks = text_splitter.split_documents(documents)
   
-store = FAISS.from_documents(texts_chunks, embeddings)
+store = FAISS.from_documents(documents, embeddings)
 vectorstore_info = VectorStoreInfo(
    name="annual_report",
    description="Banking annual report (Faiss)",
