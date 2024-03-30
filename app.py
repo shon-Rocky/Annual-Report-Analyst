@@ -9,7 +9,7 @@ from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 from dotenv import load_dotenv
-
+from langchain_community.vectorstores import FAISS
 
 load_dotenv()
 
@@ -38,12 +38,13 @@ loader = PyPDFLoader('annualreport.pdf')
 documents = loader.load_and_split()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=64)
 texts_chunks = text_splitter.split_documents(documents)
-store = Chroma.from_documents(texts_chunks, embeddings, collection_name='annualreport')
+  
+store = FAISS.from_documents(texts_chunks, embeddings)
 vectorstore_info = VectorStoreInfo(
-    name="annual_report",
-    description="a banking annual report as a pdf",
-    vectorstore=store
-)
+   name="annual_report",
+   description="Banking annual report (Faiss)",
+   vectorstore=store
+    )
 # Convert the document store into a langchain toolkit
 toolkit = VectorStoreToolkit(vectorstore_info=vectorstore_info, llm=llm)
 

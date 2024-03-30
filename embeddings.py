@@ -1,12 +1,15 @@
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from sentence_transformers import SentenceTransformer
+import torch
+
+
 
 def embeddings():
     # Define the path to the pre-trained model you want to use
     modelPath = "sentence-transformers/all-MiniLM-l6-v2"
 
     # Create a dictionary with model configuration options, specifying to use the CPU for computations
-    model_kwargs = {'device':'cpu'}
+    model_kwargs = {'device':'cuda' if torch.cuda.is_available() else 'cpu'}
 
     # Create a dictionary with encoding options, specifically setting 'normalize_embeddings' to False
     encode_kwargs = {'normalize_embeddings': False}
