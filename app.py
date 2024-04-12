@@ -52,9 +52,7 @@ agent_executor = create_vectorstore_agent(
     toolkit=toolkit,
     verbose=True
 )
-
-# Set the title of the Streamlit app
-st.title('🦜🔗 GPT Investment Banker')
+st.title('🦜🔗 GPT Analyst')
 # Create a text input box for the user
 prompt = st.text_input('Input your prompt here')
 
