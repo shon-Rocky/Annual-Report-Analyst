@@ -19,7 +19,7 @@ def llm(
         temperature: Temperature for sampling from the model (default: 0.8).
         max_token: Maximum number of tokens to generate (default: 1024).
         top_p: Nucleus sampling parameter (default: 0.75).
-        model_id: ID of the Starcoder mistral on Hugging Face (default: 'mistralai/Mixtral-8x7B-Instruct-v0.1').
+        model_id: ID of the  mistral on Hugging Face (default: 'mistralai/Mixtral-8x7B-Instruct-v0.1').
         add_to_git_credential: Whether to set the git credential (default: False).
 
     Returns:
