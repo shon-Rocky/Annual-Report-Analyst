@@ -13,13 +13,13 @@ This is a Python application that uses the power of large language models (LLMs)
 1. Clone the repository:
 
 ```
-git clone https://github.com/shon-Rocky/Annual-report-analyst-.git
+git clone https://github.com/shon-Rocky/GPT-Analyst.git
 ```
 
 2. Navigate to the project directory:
 
 ```
-cd Annual-report-analyst-
+cd GPT-Analyst
 ```
 
 3. Create a virtual environment and activate it:
