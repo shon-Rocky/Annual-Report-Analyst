@@ -1,6 +1,6 @@
 # GPT Analyst
 
-This is a Python application that uses the power of large language models (LLMs) and vector databases to analyze and answer questions about a given document. In this case, the document is an annual report in PDF format.
+This is a Python application that uses the power of large language models (LLMs) and vector databases to analyze and answer questions about a given document. 
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ This is a Python application that uses the power of large language models (LLMs)
 1. Clone the repository:
 
 ```
-git clone https://github.com/shon-Rocky/GPT-Analyst.git
+https://github.com/shon-Rocky/GPT-Analyst.git
 ```
 
 2. Navigate to the project directory:
@@ -55,7 +55,8 @@ streamlit run app.py
 2. Input your prompt in the text box that appears. The application will then generate a response based on the annual report.
 
    ### example
-   ![Screenshot (305)](https://github.com/shon-Rocky/Annual-report-analyst-/assets/140310009/50b935f9-812b-4df3-87c6-ea9c9d889f31)
+   ![image](https://github.com/shon-Rocky/GPT-Analyst/assets/140310009/34e4bd86-5acf-4627-8ddc-40b52e5e98e8)
+
 
 
 3. For document similarity search, expand the 'Document Similarity Search' section. The application will display the most relevant pages from the annual report based on your prompt.
