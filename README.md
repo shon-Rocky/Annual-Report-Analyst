@@ -5,7 +5,7 @@ This is a Python application that uses the power of large language models (LLMs)
 ## Prerequisites
 
 - Python 3.8 or higher
-- Hugging Face API token
+- Hugging Face API token and groq api token
 - Streamlit
 
 ## Installation
@@ -35,10 +35,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-5. Set your Hugging Face API token in dot env file:
+5. Set your API token in dot env file:
 
+Either you can use huggingface model or groq model
 ```
  "HUGGINGFACEHUB_API_TOKEN=your_token_here" 
+ "GROQ_API_KEY=your_token_here"
+
 ```
 
 ## Usage
@@ -55,7 +58,7 @@ streamlit run app.py
 
 ## Components
 
-- `llm.py`: This module contains the `llm` function, which creates a HuggingFaceEndpoint instance for the  LLM.
+- `llm.py`: This module contains the `llm` function, which creates a HuggingFaceEndpoint instance for the  LLM .
 - `embeddings.py`: This module contains the `embeddings` function, which creates an instance of HuggingFaceEmbeddings with the specified parameters.
 - `app.py`: This is the main application file. It uses Streamlit to create a user interface, and it uses the `llm` and `embeddings` functions to generate responses and perform document similarity search.
 
