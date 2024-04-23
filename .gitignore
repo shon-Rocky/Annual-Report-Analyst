@@ -161,4 +161,4 @@ cython_debug/
 logs
 
 /cache
-/src
+/src/__pycache__

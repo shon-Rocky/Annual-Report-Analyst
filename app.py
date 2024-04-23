@@ -1,28 +1,27 @@
-from llm import llm  # Import the LLM module
-from embeddings import embeddings  # Import the embeddings module
-import streamlit as st  # Import the Streamlit library
-from langchain_community.document_loaders import PyPDFLoader  # Import the PyPDFLoader module
-from langchain.text_splitter import RecursiveCharacterTextSplitter  # Import the RecursiveCharacterTextSplitter module
-import os  # Import the os module
-from dotenv import load_dotenv  # Import the load_dotenv function from the dotenv module
-from langchain_community.vectorstores import FAISS  # Import the FAISS module
-from langchain.embeddings import CacheBackedEmbeddings  # Import the CacheBackedEmbeddings module
-from langchain.storage import LocalFileStore  # Import the LocalFileStore module
+from src.llm import llm
+from src.embeddings import embeddings
+import streamlit as st
+from langchain_community.document_loaders import PyPDFLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+import os
+from dotenv import load_dotenv
+from langchain_community.vectorstores import FAISS
+from langchain.embeddings import CacheBackedEmbeddings
+from langchain.storage import LocalFileStore
 from langchain_groq import ChatGroq
-import time
+
+load_dotenv()
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 os.environ["LANGCHAIN_PROJECT"]="pt-giving-colon-23"
-
-# # Record the start time
-# start_time = time.time()
-
-load_dotenv()  # Load environment variables from the .env file
-
 api_key = os.environ['GROQ_API_KEY']
+
+
+
+
 # Create instance of LLM
-# llm_instance = llm() You can change it this hugging face llm
+# llm_instance = llm() #You can change it this hugging face llm
 llm_instance = ChatGroq(temperature=0, groq_api_key=api_key, model_name="mixtral-8x7b-32768")
 # Create instance of embeddings
 embeddings_instance = embeddings()
@@ -42,7 +41,7 @@ cached_embedder = CacheBackedEmbeddings.from_bytes_store(
 )
 
 # Create and load PDF Loader
-raw_documents = PyPDFLoader('Tata-motors-annual-report-2022-23.pdf').load()
+raw_documents = PyPDFLoader('pdf_file/Tata-motors-annual-report-2022-23.pdf').load()
 # Split pages from pdf 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 documents = text_splitter.split_documents(raw_documents)
@@ -77,25 +76,15 @@ if prompt:
     # Write the response to the screen
     st.write(response)
 
-#     # Use a Streamlit expander for document similarity search
-#     with st.expander('Document Similarity Search'):
-#         # Find the relevant pages
-#         search = store.similarity_search_with_score(prompt) 
-#         # Write out the first 
-#         st.write(search[0][0].page_content) 
+    # Use a Streamlit expander for document similarity search
+    with st.expander('Document Similarity Search'):
+        # Find the relevant pages
+        search = store.similarity_search_with_score(prompt) 
+        # Write out the first 
+        st.write(search[0][0].page_content) 
 
 
 
 
-# prompt = 'Provide a summary on the annual report?'
-# response = agent_executor.run(prompt)
-# print(response)
 
-# end_time = time.time()
-
-# # Calculate the elapsed time
-# elapsed_time = end_time - start_time
-
-# # Print the elapsed time
-# print(f"Program completed in {elapsed_time:.2f} seconds")
 
