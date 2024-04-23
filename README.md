@@ -54,9 +54,6 @@ streamlit run app.py
 
 2. Input your prompt in the text box that appears. The application will then generate a response based on the annual report.
 
-   ### example
-   ![Screenshot (305)](https://github.com/shon-Rocky/Annual-report-analyst-/assets/140310009/50b935f9-812b-4df3-87c6-ea9c9d889f31)
-
 
 3. For document similarity search, expand the 'Document Similarity Search' section. The application will display the most relevant pages from the annual report based on your prompt.
 
