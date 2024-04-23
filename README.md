@@ -1,4 +1,4 @@
-# GPT Analyst
+# Annual Report Analyst
 
 This is a Python application that uses the power of large language models (LLMs) and vector databases to analyze and answer questions about a given document. 
 
@@ -13,13 +13,13 @@ This is a Python application that uses the power of large language models (LLMs)
 1. Clone the repository:
 
 ```
-https://github.com/shon-Rocky/GPT-Analyst.git
+git clone https://github.com/shon-Rocky/Annual-Report-Analyst.git
 ```
 
 2. Navigate to the project directory:
 
 ```
-cd GPT-Analyst
+cd Annual-Report-Analyst
 ```
 
 3. Create a virtual environment and activate it:
