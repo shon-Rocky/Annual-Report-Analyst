@@ -3,7 +3,6 @@ from sentence_transformers import SentenceTransformer
 import torch
 
 
-
 def embeddings():
     # Define the path to the pre-trained model you want to use
     modelPath = "sentence-transformers/all-MiniLM-l6-v2"
