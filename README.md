@@ -23,15 +23,24 @@ This is a LangChain-based application that analyzes annual reports and provides 
 
 To run the application, follow these steps:
 
-1. Install the required dependencies using `pip install -r requirements.txt`.
-2. Run the application using `streamlit run app.py`.
-3. Open a web browser and navigate to `http://localhost:8501`.
-4. Input your query in the text box and press enter to receive a response.
+1. Install the required dependencies.
+```
+   pip install -r requirements.txt
+```
+3. Run the application.
+```
+   streamlit run app.py
+```
+5. Open a web browser and navigate to
+```
+   http://localhost:8501
+```
+7. Input your query in the text box and press enter to receive a response.
 
 **Configuration**
 ---------------
 
-The application uses environment variables to configure the LangChain API key and other settings. You can set these variables using a `.env` file or by setting environment variables in your operating system.
+The application uses environment variables to configure the  API key's and other settings. You can set these variables using a `.env` file or by setting environment variables in your operating system.
 
 **Example**
 ---------------
