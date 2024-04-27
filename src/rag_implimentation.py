@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings import CacheBackedEmbeddings
 from langchain.storage import LocalFileStore
-from langchain_groq import ChatGroq
+# from langchain_groq import ChatGroq
 
 from joblib import dump, load
 from langchain.agents.agent_toolkits import (
@@ -19,10 +19,10 @@ from langchain.agents.agent_toolkits import (
 
 load_dotenv()
 
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
-os.environ["LANGCHAIN_PROJECT"]="pt-giving-colon-23"
-api_key = os.environ['GROQ_API_KEY']
+# os.environ["LANGCHAIN_TRACING_V2"] = "true"
+# os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
+# os.environ["LANGCHAIN_PROJECT"]="pt-giving-colon-23"
+# api_key = os.environ['GROQ_API_KEY']
 
 # Create instance of LLM
 llm_instance = llm() #You can change it this hugging face llm

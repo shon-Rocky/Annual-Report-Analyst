@@ -1,73 +1,50 @@
-# Annual Report Analyst
+**Annual Report Analyst**
+==========================
 
-This is a Python application that uses the power of large language models (LLMs) and vector databases to analyze and answer questions about a given document. 
+This is a LangChain-based application that analyzes annual reports and provides insights based on user input. The application uses a combination of natural language processing (NLP) and information retrieval techniques to extract relevant information from the annual report and provide a response to the user's query.
 
-## Prerequisites
+**Features**
+------------
 
-- Python 3.8 or higher
-- Hugging Face API token and groq api token
-- Streamlit
+* Analyze annual reports and extract relevant information based on user input
+* Use LangChain's vector store and embeddings to enable semantic search and similarity search
+* Provide a user-friendly interface for users to input their queries and receive responses
 
-## Installation
+**Technical Details**
+--------------------
 
-1. Clone the repository:
+* The application uses LangChain's vector store and embeddings to enable semantic search and similarity search.
+* The annual report is processed using PyPDFLoader and split into pages using RecursiveCharacterTextSplitter.
+* The application uses FAISS to create an index of the annual report pages and enable fast similarity search.
+* The user interface is built using Streamlit.
 
-```
-git clone https://github.com/shon-Rocky/Annual-Report-Analyst.git
-```
+**Getting Started**
+---------------
 
-2. Navigate to the project directory:
+To run the application, follow these steps:
 
-```
-cd Annual-Report-Analyst
-```
+1. Install the required dependencies using `pip install -r requirements.txt`.
+2. Run the application using `streamlit run app.py`.
+3. Open a web browser and navigate to `http://localhost:8501`.
+4. Input your query in the text box and press enter to receive a response.
 
-3. Create a virtual environment and activate it:
+**Configuration**
+---------------
 
-```
-python3 -m venv venv
-source venv/bin/activate
-```
+The application uses environment variables to configure the LangChain API key and other settings. You can set these variables using a `.env` file or by setting environment variables in your operating system.
 
-4. Install the required packages:
+**Example**
+---------------
 
-```
-pip install -r requirements.txt
-```
-
-5. Set your API token in dot env file:
-
-Either you can use huggingface model or groq model
-```
- "HUGGINGFACEHUB_API_TOKEN=your_token_here" 
- "GROQ_API_KEY=your_token_here"
-
-```
-
-## Usage
-
-1. Run the application:
-
-```
-streamlit run app.py
-```
-
-2. Input your prompt in the text box that appears. The application will then generate a response based on the annual report.
-
-
-3. For document similarity search, expand the 'Document Similarity Search' section. The application will display the most relevant pages from the annual report based on your prompt.
-
-
-### example
    ![image](https://github.com/shon-Rocky/GPT-Analyst/assets/140310009/052d8e6d-2fa4-421e-b010-50966ea5cdf7)
    
 
-## Components
+**License**
+-------
 
-- `llm.py`: This module contains the `llm` function, which creates a HuggingFaceEndpoint instance for the  LLM .
-- `embeddings.py`: This module contains the `embeddings` function, which creates an instance of HuggingFaceEmbeddings with the specified parameters.
-- `app.py`: This is the main application file. It uses Streamlit to create a user interface, and it uses the `llm` and `embeddings` functions to generate responses and perform document similarity search.
+This application is licensed under the MIT License. See the `LICENSE` file for details.
 
-## License
+**Acknowledgments**
+---------------
 
-This project is licensed under the MIT License.
+This application uses LangChain, a open-source framework for building AI applications. We acknowledge the contributions of the LangChain community to the development of this application.
