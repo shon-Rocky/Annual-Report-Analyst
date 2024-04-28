@@ -4,7 +4,9 @@ python-dotenv
 huggingface_hub
 sentence-transformers
 streamlit
-torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+torch
+torchvision
+torchaudio
 pypdf
 langchain-community
 cryptography>=3.1
