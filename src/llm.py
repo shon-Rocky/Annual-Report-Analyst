@@ -13,7 +13,7 @@ def llm(
     top_p=0.75,
     model_id='mistralai/Mixtral-8x7B-Instruct-v0.1'
 ):
-    """Creates a HuggingFaceEndpoint instance for the Starcoder LLM.
+    """Creates a HuggingFaceEndpoint instance for the Mixtral LLM.
 
     Args:
         temperature: Temperature for sampling from the model (default: 0.8).
